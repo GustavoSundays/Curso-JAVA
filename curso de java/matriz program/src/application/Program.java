@@ -17,34 +17,33 @@ public class Program {
 		int[][] matriz = new int[n][m];
 		
 		for(int i=0;i<n; i++) {
-			System.out.println("Digite os "+m+" números da linha "+i+"("+(i+1)+"): ");
+			System.out.println("Digite os "+m+" nÃºmeros da linha "+i+"("+(i+1)+"): ");
 			for(int j=0;j<m; j++) {
 				matriz[i][j] = sc.nextInt();
 			}
 		}
 		
-		System.out.print("Digite um número: ");
+		System.out.print("Digite um nÃºmero: ");
 		int x = sc.nextInt();
 		
 		for(int i=0;i<n;i++) {
 			for(int j=0;j<m;j++) {
 				if(x == matriz[i][j]) {
-					System.out.println("Posição: "+i+","+j);
-					if(!((i-1)<0)) {
-						System.out.println("Número de cima: "+matriz[i-1][j]);
+					System.out.println("PosiÃ§Ã£o: "+i+","+j);
+					if(i>0) {
+						System.out.println("NÃºmero de cima: "+matriz[i-1][j]);
 					}
 					
-					if(!((i+1)>n)) {
-						System.out.println("Número de baixo: "+matriz[i+1][j]);
+					if(i<matriz.length-1) {
+						System.out.println("NÃºmero de baixo: "+matriz[i+1][j]);
 					}
 					
-					if(!((j-1)<0)) {
-						System.out.println("Número da esquerda: "+matriz[i][j-1]);
+					if(j>0) {
+						System.out.println("NÃºmero da esquerda: "+matriz[i][j-1]);
 					}
 					
-					if(!((j+1)>m)) {
-						System.out.println("Número da direita: "+matriz[i][j+1]);
-						break;
+					if(j<matriz[i].length-1) {
+						System.out.println("NÃºmero da direita: "+matriz[i][j+1]);
 					}
 				}
 			}
